@@ -26,7 +26,24 @@ const getAllProducts = async (req: Request, res: Response) => {
 
     res.status(200).json({
       success: true,
-     "message": "Products fetched successfully!",
+      message: "Products fetched successfully!",
+      data: result,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+//getAllProductsContoller
+const getSingleProduct = async (req: Request, res: Response) => {
+  try {
+    const { productId } = req.params;
+    //send response
+    const result = await productServices.getSingleProductFromDb(productId);
+
+    res.status(200).json({
+      success: true,
+      message: "Products fetched successfully!",
       data: result,
     });
   } catch (err) {
@@ -37,4 +54,5 @@ const getAllProducts = async (req: Request, res: Response) => {
 export const productsContollers = {
   createProducts,
   getAllProducts,
+  getSingleProduct,
 };
