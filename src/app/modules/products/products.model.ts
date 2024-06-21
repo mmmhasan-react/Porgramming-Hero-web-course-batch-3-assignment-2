@@ -1,21 +1,24 @@
-import { Schema, model, connect } from "mongoose";
-import { Product, Product, ProductName } from "./products.interface";
+import { Schema, model } from "mongoose";
+import { Product } from "./products.interface";
 
-const productNameSchema = new Schema<ProductName>({
-  firstName: {
-    type: String,
-    required: true,
-  },
-  middleName: {
-    type: String,
-  },
-  lastName: {
-    type: String,
-    required: true,
-  },
-});
+// const productNameSchema = new Schema<ProductName>({
+//   firstName: {
+//     type: String,
+//     required: true,
+//   },
+//   middleName: {
+//     type: String,
+//   },
+//   lastName: {
+//     type: String,
+//     required: true,
+//   },
+// });
 const productSchema = new Schema<Product>({
-  productName: productNameSchema,
+  productName: {
+    type: String,
+    required: true,
+  },
   description: {
     type: String,
     required: true,

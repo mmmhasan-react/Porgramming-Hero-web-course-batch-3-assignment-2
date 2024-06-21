@@ -1,13 +1,11 @@
-import { Schema, model, connect } from "mongoose";
-
-export type ProductName = {
-  firstName: string;
-  middleName: string;
-  lastName: string;
-};
+// export type ProductName = {
+//   firstName: string;
+//   middleName: string;
+//   lastName: string;
+// };
 
 export type Product = {
-  productName: ProductName;
+  productName: string;
   description: string;
   price: number;
   category: string;
